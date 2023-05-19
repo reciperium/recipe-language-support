@@ -1,0 +1,31 @@
+{
+  "name": "recipe-lang",
+  "displayName": "Recipe Lang",
+  "description": "Syntax highlight for Recipe Lang",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "recp",
+      "aliases": ["Recipe", "recp"],
+      "extensions": [".recp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "recp",
+      "scopeName": "source.recp",
+      "path": "./syntaxes/recp.tmLanguage.json",
+      "injectTo": [
+        "text.html.markdown"
+      ],
+      "embeddedLanguages": {
+        "meta.embedded.block.recp": "recp"
+      }
+    }]
+  }
+}

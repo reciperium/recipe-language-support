@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Recipe Lang",
+  "scopeName": "source.recp",
+  "fileTypes": ["recp"],
+  "patterns": [
+    {
+      "include": "#recp-code-block"
+    },
+    {
+      "name": "entity.name.ingredient.recp",
+      "match": "\\{\\s*([\\w\\s]+)\\s*\\}(\\(\\s*([0-9./]+)\\s*([a-zA-Z]+)?\\s*\\))?",
+      "captures": {
+        "0": {
+          "name": "keyword.control.ingredient"
+        },
+        "1": {
+          "name": "variable.name.ingredient"
+        },
+        "3": {
+          "name": "constant.numeric.amount"
+        },
+        "4": {
+          "name": "constant.character.unit"
+        }
+      }
+    },
+    {
+      "name": "entity.name.material.recp",
+      "match": "(m)\\{\\s*([\\w\\s]+)\\s*\\}",
+      "captures": {
+        "0": {
+          "name": "keyword.control.unit.timer.recp"
+        },
+        "2": {
+          "name": "constant.character.material"
+        }
+      }
+    },
+    {
+      "name": "entity.name.timer.recp",
+      "match": "(t)\\{\\s*([0-9.\\w\\s]+)\\s*\\}",
+      "captures": {
+        "0": {
+          "name": "keyword.control.unit.timer.recp"
+        },
+        "2": {
+          "name": "constant.character.timer"
+        }
+      }
+    },
+    {
+      "name": "meta.metadata.recp",
+      "match": "^(>>)(\\s*)((\\w+):(\\s*)(.*))?$",
+      "captures": {
+        "1": {
+          "name": "keyword.control.meta.recp"
+        },
+        "6": {
+          "name": "string.unquoted.value.recp"
+        }
+      }
+    },
+    {
+      "name": "comment.block",
+      "begin": "\\/\\*",
+      "end": "\\*\\/",
+      "captures": {
+        "0": {
+          "name": "punctuation.definition.comment"
+        }
+      }
+    }
+  ],
+  "repository": {
+		"recp-code-block": {
+			"begin": "(^|\\G)(\\s*)(\\`{3,}|~{3,})\\s*(?i:(recp)(\\s+[^`~]*)?$)",
+			"name": "markup.fenced_code.block.markdown",
+			"end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
+			"beginCaptures": {
+				"3": {
+					"name": "punctuation.definition.markdown"
+				},
+				"4": {
+					"name": "fenced_code.block.language.markdown"
+				},
+				"5": {
+					"name": "fenced_code.block.language.attributes.markdown"
+				}
+			},
+			"endCaptures": {
+				"3": {
+					"name": "punctuation.definition.markdown"
+				}
+			},
+			"patterns": [
+				{
+					"begin": "(^|\\G)(\\s*)(.*)",
+					"while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
+					"contentName": "meta.embedded.block.recp",
+					"patterns": [
+						{
+							"include": "source.recp"
+						}
+					]
+				}
+			]
+		}
+	},
+  "injectionSelector": "L:text.html.markdown"
+}
