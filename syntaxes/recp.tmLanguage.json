@@ -8,6 +8,9 @@
       "include": "#recp-code-block"
     },
     {
+      "include": "#recp-backstory"
+    },
+    {
       "name": "entity.name.ingredient.recp",
       "match": "\\{\\s*([\\w\\s]+)\\s*\\}(\\(\\s*([0-9./]+)\\s*([a-zA-Z]+)?\\s*\\))?",
       "captures": {
@@ -73,6 +76,15 @@
     }
   ],
   "repository": {
+    "recp-backstory": {
+      "match": "^(---)\n.*",
+      "name": "markup",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment"
+        }
+      }
+    },
 		"recp-code-block": {
 			"begin": "(^|\\G)(\\s*)(\\`{3,}|~{3,})\\s*(?i:(recp)(\\s+[^`~]*)?$)",
 			"name": "markup.fenced_code.block.markdown",
