@@ -4,6 +4,14 @@ All notable changes to the "recipe-lang" extension will be documented in this fi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## 0.1.0 (2023-06-12)
 
-- Initial release
+### Feat
+
+- add recipe-lang extension
+- add syntax for backstory
+- add syntax highlight for recp
+
+### Fix
+
+- update metadata
