@@ -3,7 +3,7 @@
   "displayName": "Recipe Lang",
   "description": "Syntax highlight for Recipe Lang",
   "publisher": "woile",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.78.0"
   },
