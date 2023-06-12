@@ -4,6 +4,12 @@ All notable changes to the "recipe-lang" extension will be documented in this fi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## 0.2.1 (2023-06-12)
+
+### Fix
+
+- add missing lock
+
 ## 0.2.0 (2023-06-12)
 
 ### Feat
