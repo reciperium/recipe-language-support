@@ -2,6 +2,7 @@
   "name": "recipe-lang",
   "displayName": "Recipe Lang",
   "description": "Syntax highlight for Recipe Lang",
+  "publisher": "woile",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
@@ -12,6 +13,7 @@
   "categories": [
     "Programming Languages"
   ],
+  "pricing": "Free",
   "contributes": {
     "languages": [{
       "id": "recp",
