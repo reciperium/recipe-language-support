@@ -29,8 +29,26 @@
       }
     },
     {
+      "name": "entity.name.recipe_ref.recp",
+      "match": "@\\{\\s*([\\w\\s/-0-9.]+)\\s*\\}(\\(\\s*([0-9./]+)\\s*([a-zA-Z]+)?\\s*\\))?",
+      "captures": {
+        "0": {
+          "name": "keyword.control.recipe_ref"
+        },
+        "1": {
+          "name": "markup.link"
+        },
+        "3": {
+          "name": "constant.numeric.amount"
+        },
+        "4": {
+          "name": "constant.character.unit"
+        }
+      }
+    },
+    {
       "name": "entity.name.material.recp",
-      "match": "(m)\\{\\s*([\\w\\s]+)\\s*\\}",
+      "match": "(&)\\{\\s*([\\w\\s]+)\\s*\\}",
       "captures": {
         "0": {
           "name": "keyword.control.unit.timer.recp"

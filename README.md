@@ -1,8 +1,6 @@
 # recipe-lang
 
-Extension that adds syntax highlight for [recipe-lang]().
-
-This is the README for your extension "recipe-lang". After writing up a brief description, we recommend including the following sections.
+Extension that adds syntax highlight for [recipe-lang](https://github.com/reciperium/recipe-lang).
 
 ## Features
 
